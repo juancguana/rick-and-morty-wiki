@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.scss";
 import { Cards } from "./components/Cards";
 import { Filters } from "./components/Filters";
+import { Pagination } from "./components/Pagination";
 import { useFetchCharacters } from "./hooks/useFetchCharacters";
 
 function App() {
@@ -11,9 +12,11 @@ function App() {
 
   return (
     <div className="App">
-      <h1>
-        Rick & Morty <span>Wiki</span>
-      </h1>
+      <header className="mb-4 p-2">
+        <h1>
+          Rick & Morty <span>Wiki</span>
+        </h1>
+      </header>
 
       <div className="container">
         <div className="row">
@@ -27,6 +30,7 @@ function App() {
           </div>
         </div>
       </div>
+      <Pagination pageNumber={pageNumber} setPageNumber={setPageNumber} />
     </div>
   );
 }

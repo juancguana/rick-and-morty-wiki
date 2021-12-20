@@ -10,13 +10,15 @@ const useFetchCharacters = (pageNumber) => {
   const { characters } = state;
 
   useEffect(() => {
-    getCharacters(pageNumber).then((resp) => {
-      setState({
-        info: resp.info,
-        characters: resp.results,
-        loading: false,
-      });
-    });
+    getCharacters(pageNumber)
+      .then((resp) => {
+        setState({
+          info: resp.info,
+          characters: resp.results,
+          loading: false,
+        });
+      })
+      .catch((err) => console.error(err.message));
   }, [pageNumber]);
 
   return { characters };

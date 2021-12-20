@@ -1,0 +1,28 @@
+@import "../../colors";
+
+.card {
+  position: relative;
+  margin: 2rem;
+  padding: 10px;
+  border: 1px solid $primary-main;
+  box-shadow: 2px 2px 5px img-fluid;
+  border-radius: 10px;
+  transition: 250ms;
+}
+
+.card:hover {
+  box-shadow: 0px 0px 20px $primary-light;
+}
+
+.badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.2rem !important;
+}
+
+.img {
+  border-radius: 50%;
+  border: solid 2px $secondary-main;
+  width: 200px;
+}

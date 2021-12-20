@@ -1,7 +1,5 @@
 import React from "react";
 
-const Filters = () => {
+export const Filters = () => {
   return <div>Filters</div>;
 };
-
-export { Filters };
