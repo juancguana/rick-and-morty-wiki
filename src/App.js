@@ -9,7 +9,7 @@ import { useFetchCharacters } from "./hooks/useFetchCharacters";
 function App() {
   const [pageNumber, setPageNumber] = useState(1);
   const [search, setSearch] = useState("");
-  const { characters } = useFetchCharacters(pageNumber, search);
+  const { characters, info } = useFetchCharacters(pageNumber, search);
 
   return (
     <div className="App">
@@ -32,7 +32,7 @@ function App() {
           </div>
         </div>
       </div>
-      <Pagination pageNumber={pageNumber} setPageNumber={setPageNumber} />
+      <Pagination info={info} pageNumber={pageNumber} setPageNumber={setPageNumber} />
     </div>
   );
 }

@@ -28,7 +28,7 @@ const useFetchCharacters = (pageNumber, search) => {
       });
   }, [pageNumber, search]);
 
-  return { characters };
+  return state;
 };
 
 export { useFetchCharacters };
