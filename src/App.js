@@ -3,12 +3,13 @@ import "./App.scss";
 import { Cards } from "./components/Cards";
 import { Filters } from "./components/Filters";
 import { Pagination } from "./components/Pagination";
+import { Search } from "./components/Search";
 import { useFetchCharacters } from "./hooks/useFetchCharacters";
 
 function App() {
   const [pageNumber, setPageNumber] = useState(1);
-
-  const { characters } = useFetchCharacters(pageNumber);
+  const [search, setSearch] = useState("");
+  const { characters } = useFetchCharacters(pageNumber, search);
 
   return (
     <div className="App">
@@ -17,6 +18,7 @@ function App() {
           Rick & Morty <span>Wiki</span>
         </h1>
       </header>
+      <Search setSearch={setSearch} setPageNumber={setPageNumber} />
 
       <div className="container">
         <div className="row">

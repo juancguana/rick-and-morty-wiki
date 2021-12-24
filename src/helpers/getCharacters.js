@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const getCharacters = async (page) => {
-  const url = `https://rickandmortyapi.com/api/character?page=${page}`;
+const getCharacters = async (page, search) => {
+  const url = `https://rickandmortyapi.com/api/character?page=${page}&name=${search}`;
 
   try {
     const { data } = await axios.get(url);

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getCharacters } from "../helpers/getCharacters";
 
-const useFetchCharacters = (pageNumber) => {
+const useFetchCharacters = (pageNumber, search) => {
   const [state, setState] = useState({
     info: {},
     characters: [],
@@ -10,7 +10,7 @@ const useFetchCharacters = (pageNumber) => {
   const { characters } = state;
 
   useEffect(() => {
-    getCharacters(pageNumber)
+    getCharacters(pageNumber, search)
       .then((resp) => {
         setState({
           info: resp.info,
@@ -18,8 +18,15 @@ const useFetchCharacters = (pageNumber) => {
           loading: false,
         });
       })
-      .catch((err) => console.error(err.message));
-  }, [pageNumber]);
+      .catch((err) => {
+        setState({
+          info: {},
+          characters: [],
+          loading: true,
+        });
+        console.error(err.message);
+      });
+  }, [pageNumber, search]);
 
   return { characters };
 };
