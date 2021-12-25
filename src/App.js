@@ -9,7 +9,8 @@ import { useFetchCharacters } from "./hooks/useFetchCharacters";
 function App() {
   const [pageNumber, setPageNumber] = useState(1);
   const [search, setSearch] = useState("");
-  const { characters, info } = useFetchCharacters(pageNumber, search);
+  const [filter, setFilter] = useState({ gender: "", species: "", status: "" });
+  const { characters, info } = useFetchCharacters(pageNumber, search, filter);
 
   return (
     <div className="App">
@@ -22,9 +23,7 @@ function App() {
 
       <div className="container">
         <div className="row">
-          <div className="col-3">
-            <Filters />
-          </div>
+          <Filters setFilter={setFilter} setPageNumber={setPageNumber} />
           <div className="col-9">
             <div className="row">
               <Cards characters={characters} />
@@ -32,7 +31,11 @@ function App() {
           </div>
         </div>
       </div>
-      <Pagination info={info} pageNumber={pageNumber} setPageNumber={setPageNumber} />
+      <Pagination
+        info={info}
+        pageNumber={pageNumber}
+        setPageNumber={setPageNumber}
+      />
     </div>
   );
 }

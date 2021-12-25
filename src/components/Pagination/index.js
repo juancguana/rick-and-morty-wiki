@@ -12,7 +12,7 @@ export const Pagination = ({ info, pageNumber, setPageNumber }) => {
       nextClassName="btn btn-primary fs-5"
       pageClassName="page-item"
       pageLinkClassName="page-link"
-      pageCount={info?.pages}
+      pageCount={info?.pages || 1}
       onPageChange={({ selected }) => setPageNumber(selected + 1)}
       nextLinkClassName="text-white"
       previousLinkClassName="text-white"
