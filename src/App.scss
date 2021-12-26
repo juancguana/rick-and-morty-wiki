@@ -3,8 +3,14 @@
 h1 {
   text-align: center;
   margin: 1rem;
-  font-size: 4.2rem !important;
+  font-size: 3.2rem !important;
   span {
     color: $primary-light;
   }
+}
+
+.active {
+  border-bottom: 2px solid $primary-light;
+  font-weight: bold;
+  color: $primary-light !important;
 }

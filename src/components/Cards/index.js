@@ -16,7 +16,7 @@ export const Cards = ({ characters }) => {
           <img src={image} alt={name} className={`${styles.img} img-fluid`}/>
         </figure>
         <div className="content">
-          <h4 className="fw-bold mb-4">{name}</h4>
+          <h3 className="fw-bold mb-4">{name}</h3>
           <div className="">
             <span>Last location: </span>
             <p className="fs-5">{location.name}</p>

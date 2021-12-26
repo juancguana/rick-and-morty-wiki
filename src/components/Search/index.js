@@ -15,7 +15,7 @@ export const Search = ({ setSearch, setPageNumber }) => {
       />
       <button
         onClick={(e) => e.preventDefault()}
-        className={`${styles.btn} btn btn-primary fs-5`}
+        className={`${styles.btn} btn btn-primary fs-4`}
       >
         Search
       </button>

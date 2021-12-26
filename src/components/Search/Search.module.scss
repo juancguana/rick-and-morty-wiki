@@ -6,6 +6,7 @@
   border: 2px solid $primary-main;
   padding: 10px 15px;
   box-shadow: 1px 3px 9px $primary-light;
+  font-size: medium;
   &:focus {
     outline: none;
   }
@@ -13,5 +14,4 @@
 
 .btn {
   box-shadow: 1px 3px 9px $primary-light;
-
 }
