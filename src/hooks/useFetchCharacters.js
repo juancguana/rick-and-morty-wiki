@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getCharacters } from "../helpers/getCharacters";
 
-const useFetchCharacters = (pageNumber, search, filter) => {
+export const useFetchCharacters = (pageNumber, search, filter) => {
   const [state, setState] = useState({
     info: {},
     characters: [],
@@ -29,5 +29,3 @@ const useFetchCharacters = (pageNumber, search, filter) => {
 
   return state;
 };
-
-export { useFetchCharacters };
