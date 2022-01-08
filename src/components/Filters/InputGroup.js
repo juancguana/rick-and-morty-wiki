@@ -8,7 +8,7 @@ export const InputGroup = ({ setId, total, name }) => {
         id={name}
         onChange={(e) => setId(e.target.value)}
       >
-        <option>Choose...</option>
+        <option value={1}>Choose...</option>
         {[...Array(total).keys()].map((item) => {
           return (
             <option key={`option-${item}`} value={item + 1}>
