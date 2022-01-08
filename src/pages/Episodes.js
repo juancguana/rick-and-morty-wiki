@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Cards } from "../components/Cards";
+import { InputGroup } from "../components/Filters/InputGroup";
 import { useFetchEpisodes } from "../hooks/useFetchEpisodes";
 
 export const Episodes = () => {
-  const { airDate, name, characters } = useFetchEpisodes(1);
+  const [id, setId] = useState(1);
+  const { airDate, name, characters } = useFetchEpisodes(id);
 
   return (
     <>
@@ -18,7 +20,10 @@ export const Episodes = () => {
           </h3>
         </div>
         <div className="row">
-          <div className="col-3">Pick episode</div>
+          <div className="col-3">
+            <h4 className="text-center mb-4">Pick episode</h4>
+            <InputGroup setId={setId} name="episode" total={51} />
+          </div>
           <div className="col-8">
             <div className="row">
               <Cards characters={characters} />
